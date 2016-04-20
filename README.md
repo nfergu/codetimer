@@ -1,6 +1,6 @@
 # Introduction
 
-CodeTimer is a very simple utility for recording the performance of blocks of code. It lets us record timings against a specific key,
+CodeTimer is a very simple utility for recording the performance of blocks of code in C++. It lets us record timings against a specific key,
 and then aggregates all of the timings for a key.
 
 CodeTimer is designed to perform well when called concurrently by multiple threads. Internally it uses a
@@ -13,7 +13,6 @@ Here is a simple usage example:
 #include <iostream>
 #include <thread>
 #include "codetimer.h"
-
 void sleepMillis(long milliseconds) {
     std::this_thread::sleep_for(std::chrono::milliseconds(milliseconds));
 }
@@ -47,8 +46,8 @@ key2: total=0.200093; occurrences=1
 
 For each key that we recorded a timing against, we can see the total time for that key, and the number of times we recorded a timing for the key.
 
-In the above example we use `CodeTimer::record` to record a timing for a specific key, and ```CodeTimer::printStats()```. See the API docs in
-[codetimer.h](codetimer.h) for more details.
+In the above example we use `CodeTimer::record` to record a timing for a specific key, and ```CodeTimer::printStats()``` to print an aggregated view
+of the timings we have recorded. See the API docs in [codetimer.h](codetimer.h) for more details.
 
 # Building and Running
 
@@ -58,11 +57,16 @@ To build the usage example, first build and install [libcuckoo](https://github.c
 g++ -o timerexample -std=c++11 timerexample.cc codetimer.cc codetimer.h
 ```
 
+CodeTimer requires a compiler that supports C++ 11.
+
 You can then run the usage example as follows:
 
 ```
 ./timerexample
 ```
+
+To use CodeTimer in your own projects, add `#include "codetimer.h"` to your source code, and add
+[codetimer.h](codetimer.h) and [codetimer.cc](codetimer.cc) to your build.
 
 # License
 
