@@ -57,7 +57,7 @@ To build the usage example, first build and install [libcuckoo](https://github.c
 g++ -o timerexample -std=c++11 timerexample.cc codetimer.cc codetimer.h
 ```
 
-CodeTimer requires a compiler that supports C++ 11.
+This assumes you have a version of GCC that supports C++ 11 installed.
 
 You can then run the usage example as follows:
 
