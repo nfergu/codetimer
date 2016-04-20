@@ -1,7 +1,10 @@
 # Introduction
 
-CodeTimer is a very simple utility for recording the performance of blocks of code. CodeTimer is designed to perform well when called
-concurrently by multiple threads. Internally it uses a [libcuckoo](https://github.com/efficient/libcuckoo) hash table.
+CodeTimer is a very simple utility for recording the performance of blocks of code. It lets us record timings against a specific key,
+and then aggregates all of the timings for a key.
+
+CodeTimer is designed to perform well when called concurrently by multiple threads. Internally it uses a
+[libcuckoo](https://github.com/efficient/libcuckoo) hash table.
 
 Here is a simple usage example:
 
