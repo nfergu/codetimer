@@ -7,6 +7,8 @@ CodeTimer is designed to perform well when called concurrently by multiple threa
 [libcuckoo](https://github.com/efficient/libcuckoo) hash table.
 
 CodeTimer meaures [wall-clock time](https://en.wikipedia.org/wiki/Wall-clock_time) (as opposed to [CPU time](https://en.wikipedia.org/wiki/CPU_time)).
+It uses the [<chrono> library](http://www.cplusplus.com/reference/chrono/s)'s
+[high_resolution_clock](http://www.cplusplus.com/reference/chrono/high_resolution_clock/) to measure timings with high precision.
 
 Here is a simple usage example:
 
