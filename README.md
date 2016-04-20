@@ -45,9 +45,9 @@ key2: total=0.200093; occurrences=1
 For each key that we recorded a timing against, we can see the total time for that key, and the number of times we recorded a timing for the key.
 
 In the above example we use `CodeTimer::record` to record a timing for a specific key, and ```CodeTimer::printStats()```. See the API docs in
-[codetimer.h] for more details.
+[codetimer.h](codetimer.h) for more details.
 
-# Building
+# Building and Running
 
 To build the usage example, first build and install [libcuckoo](https://github.com/efficient/libcuckoo). Then, compile as follows:
 
@@ -61,6 +61,9 @@ You can then run the usage example as follows:
 ./timerexample
 ```
 
+# License
+
+CodeTimer is licensed under the [Apache License, Version 2.0](LICENSE.md)
 
 
 

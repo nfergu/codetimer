@@ -21,7 +21,7 @@ void CodeTimer::record(std::string name, std::chrono::high_resolution_clock::tim
         existingValue->totalSecs += diff.count();
     };
     // We try a regular update before calling upsert here. We assume that updates will be much
-    // more common that insertions, and this avoids creating unnecessary RecordedValue instances
+    // more common than insertions, and this avoids creating unnecessary RecordedValue instances
     // when performing updates. Unnecessary RecordedValue instances will only be created when
     // there are race conditions between threads, which is likely to be rare.
     if (!CodeTimer::timerMap.update_fn(name, updateFunction)) {
